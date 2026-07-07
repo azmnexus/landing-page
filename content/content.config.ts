@@ -60,7 +60,8 @@ export const HERO_CONTENT = {
     { value: "Active", label: "Operations Status" },
   ],
   // TODO: replace with actual image
-  backgroundImage: "/images/Hero_Image.jpeg",
+  backgroundImage: "/images/hero_image.jpg",
+
 };
 
 export const PORTFOLIO_CONTENT = {
