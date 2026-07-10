@@ -61,7 +61,6 @@ export const HERO_CONTENT = {
   ],
   // TODO: replace with actual image
   backgroundImage: "/images/hero_image.jpg",
-
 };
 
 export const PORTFOLIO_CONTENT = {
@@ -110,6 +109,13 @@ export const PORTFOLIO_CONTENT = {
       imageUrl: "/images/P2P_Digital_Asset_Trading.jpeg",
       badge: "Active Sector",
       iconName: "RefreshCw",
+    },
+    {
+      title: "Construction & Real Estate",
+      description: "Developing resilient construction and real estate ventures. Supporting infrastructure growth and long-term asset development.",
+      imageUrl: "/images/construction-real-estate.jpg",
+      badge: "Active Sector",
+      iconName: "Building2",
     },
   ],
 };
