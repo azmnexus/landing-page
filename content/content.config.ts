@@ -49,15 +49,15 @@ export const NAV_CONTENT = {
 };
 
 export const HERO_CONTENT = {
-  label: "DIVERSIFIED. EXECUTION-DRIVEN. NATIONAL.",
-  headline: "Building Enterprises That Move Nigeria Forward",
-  subtext: "AZM Nexus Limited is a diversified holding company with active operations across technology, digital health, agriculture, trade, and digital asset sectors — delivering measurable progress across Nigerian markets.",
-  ctaPrimary: "Explore Our Portfolio",
-  ctaSecondary: "Contact Our Team",
+  label: "DIVERSIFIED HOLDING COMPANY • INNOVATION • SUSTAINABLE GROWTH",
+  headline: "Building Sustainable Businesses for the Future",
+  subtext: "AZM Nexus Limited is a diversified enterprise operating across technology services, digital health, agriculture, trade, construction, real estate, and digital finance. Through strategic investment, innovation, and operational excellence, we build resilient businesses that deliver long-term value for customers, partners, investors, and communities.",
+  ctaPrimary: "Explore Our Businesses",
+  ctaSecondary: "Partner With Us",
   stats: [
-    { value: "6", label: "Business Sectors" },
-    { value: "National", label: "Operating Footprint" },
-    { value: "Active", label: "Operations Status" },
+    { value: "8", label: "Core Verticals" },
+    { value: "Diversified", label: "Enterprise Group" },
+    { value: "Long-Term", label: "Value Creation" },
   ],
   // TODO: replace with actual image
   backgroundImage: "/images/hero_image.jpg",
@@ -70,52 +70,59 @@ export const PORTFOLIO_CONTENT = {
   cards: [
     {
       title: "Technology Services",
-      description: "Delivering robust digital infrastructure and enterprise solutions. We build scalable technology to support modern business operations.",
+      description: "Driving digital transformation through enterprise technology, software engineering, cloud infrastructure, and intelligent automation that empower organizations to innovate and scale.",
       imageUrl: "/images/Technology_Services.jpeg",
       badge: "Active Sector",
       iconName: "Monitor",
     },
     {
       title: "Digital Health",
-      description: "Innovating healthcare delivery through digital platforms. Enhancing accessibility and operational efficiency in medical services.",
+      description: "Advancing the future of healthcare with technology-driven solutions that improve patient experiences, optimize clinical workflows, and strengthen healthcare delivery.",
       imageUrl: "/images/Digital_Health.jpeg",
       badge: "Active Sector",
       iconName: "Stethoscope",
     },
     {
       title: "Agriculture & Agribusiness",
-      description: "Investing in sustainable farming and agricultural processing. Securing food supply chains and driving rural economic growth.",
+      description: "Building resilient agricultural ecosystems through strategic investments in production, processing, logistics, and value-added agribusiness ventures.",
       imageUrl: "/images/Agriculture_and_Agribusiness.jpeg",
       badge: "Active Sector",
       iconName: "Sprout",
     },
     {
       title: "General Trade & Household Retail",
-      description: "Managing diverse retail operations and household goods distribution. Meeting consumer needs with reliable supply networks.",
+      description: "Supporting everyday living through efficient trading, procurement, and retail distribution of essential consumer and household products.",
       imageUrl: "/images/General_Trade_and_Household_Retail.jpeg",
       badge: "Active Sector",
       iconName: "Store",
     },
     {
       title: "Bulk Agricultural Trade",
-      description: "Facilitating large-scale movement of agricultural commodities. Ensuring efficient logistics and market access.",
+      description: "Connecting producers with regional and international markets through reliable commodity sourcing, logistics, and supply chain management.",
       imageUrl: "/images/Bulk_Agricultural_Trade.jpeg",
       badge: "Active Sector",
       iconName: "Truck",
     },
     {
       title: "P2P Digital Asset Trading",
-      description: "Providing secure platforms for peer-to-peer asset exchange. Navigating the digital economy with compliance and trust.",
+      description: "Enabling trusted digital asset exchange through secure, compliant, and user-focused peer-to-peer trading platforms.",
       imageUrl: "/images/P2P_Digital_Asset_Trading.jpeg",
       badge: "Active Sector",
       iconName: "RefreshCw",
     },
     {
-      title: "Construction & Real Estate",
-      description: "Developing resilient construction and real estate ventures. Supporting infrastructure growth and long-term asset development.",
+      title: "Building & Construction",
+      description: "Delivering innovative construction and infrastructure solutions that combine engineering excellence, quality execution, and sustainable development.",
       imageUrl: "/images/construction-real-estate.jpg",
       badge: "Active Sector",
       iconName: "Building2",
+    },
+    {
+      title: "Real Estate",
+      description: "Developing and managing high-value real estate assets that foster economic growth, investment opportunities, and vibrant communities.",
+      imageUrl: "/images/real_estate.jpg",
+      badge: "Active Sector",
+      iconName: "Home",
     },
   ],
 };
@@ -127,23 +134,43 @@ export const OPERATIONS_CONTENT = {
   legend: "Active indicates fully operational businesses, while In Progress indicates initiatives moving toward launch.",
   cards: [
     {
-      title: "Agriculture",
-      description: "Supply chain established and initial harvests processed, driving farm-to-market distribution.",
+      title: "Technology Services",
+      description: "Digital infrastructure and enterprise solutions are being scaled to support business growth and service delivery.",
       status: "Active",
     },
     {
-      title: "Trade",
-      description: "Distribution networks are operational across key regions, enabling reliable goods movement.",
-      status: "Active",
-    },
-    {
-      title: "Tech/Health",
-      description: "Platform development and partner onboarding continue as the service prepares for launch.",
+      title: "Digital Health",
+      description: "Platform development and partner onboarding continue as the healthcare offering moves toward broader deployment.",
       status: "In Progress",
     },
     {
-      title: "Digital Assets",
-      description: "Trading protocols are live, with compliance frameworks being reinforced for scale.",
+      title: "Agriculture & Agribusiness",
+      description: "Agricultural operations are expanding through production, processing, logistics, and market access initiatives.",
+      status: "Active",
+    },
+    {
+      title: "General Trade & Household Retail",
+      description: "Retail and distribution channels are operating with growing reach across essential consumer products.",
+      status: "Active",
+    },
+    {
+      title: "Bulk Agricultural Trade",
+      description: "Commodity trading operations are active, strengthening sourcing, logistics, and market connectivity.",
+      status: "Active",
+    },
+    {
+      title: "P2P Digital Asset Trading",
+      description: "Trading protocols are live, with compliance and operational controls being reinforced for scale.",
+      status: "Active",
+    },
+    {
+      title: "Building & Construction",
+      description: "Construction and infrastructure initiatives are advancing with a focus on execution quality and long-term delivery.",
+      status: "Active",
+    },
+    {
+      title: "Real Estate",
+      description: "Real estate activities are being developed around strategic asset growth and long-term value creation.",
       status: "Active",
     },
   ] as OperationsCard[],
@@ -162,15 +189,12 @@ export const TICKER_CONTENT = [
 
 export const TEAM_CONTENT = {
   label: "OUR PEOPLE",
-  title: "Leadership & Key Contributors",
-  subtext: "A capable, experienced team managing AZM Nexus's diversified operations with focus and accountability.",
+  title: "Leadership",
+  subtext: "Our leadership is anchored by the Chief Executive Officer.",
   members: [
     { name: "Abubakar Sadiq Abdulhameed", role: "Chief Executive Officer", bio: "A results-driven technologist with six years of experience across AI, software engineering, and machine learning. Skilled in development, algorithms, and data science — with a track record of translating complex concepts into clear, actionable outcomes.", imageUrl: "/images/team/ceo.jpg", linkedin: "https://www.linkedin.com/in/abubakar-sadiq-abdulhameed/" },
-    { name: "Khalid Adedolapo Adebiyi", role: "Senior Fullstack Engineer", bio: "Senior Full-Stack Engineer focused on building secure, scalable web applications from backend to frontend. Brings a security-first mindset backed by hands-on penetration testing experience, with a track record across healthcare SaaS and enterprise tooling. Adapts across stacks, languages, and cloud platforms as the project demands.", imageUrl: "/images/team/sfe.jpg", linkedin: "https://www.linkedin.com/in/khalid-adebiyi-a99157174" },
-    { name: "Muhammed (Idowu) Mustapha", role: "Quality Automation / Fullstack Engineer", bio: "QA Engineer and Customer Experience specialist with a background spanning telecom, renewable energy, fintech, and Web3. Bridges the gap between users, support, and engineering — catching bugs and usability gaps early while ensuring post-launch customer satisfaction through escalation handling, CSAT, and NPS analysis. Currently transitioning into automation testing. Works best in fast-paced environments where product quality and user experience are taken seriously.", imageUrl: "/images/team/fsqa.jpeg", linkedin: "https://www.linkedin.com/in/muhammed-mustapha-819347169" },
-    { name: "Khalifah Abdul-hameed", role: "Machine Learning / Cloud / Backend Engineer", bio: "Backend and Cloud Engineer with a growing focus on Machine Learning — building the infrastructure and systems that take models from experiment to production. Comfortable across cloud platforms, distributed systems, and backend architecture, with an eye for scalable, maintainable design.", imageUrl: "/images/team/JMLCB.jpg", linkedin: "https://www.linkedin.com/in/khalifah-abdul-hameed-4b86bb314" },
+    //{ name: "Pending Member", role: "To Be Updated", bio: "Details to be added later.", imageUrl: "/images/team/placeholder.jpg", linkedin: "" },
   ],
-  footerText: "More team members coming soon →",
 };
 
 export const CONTACT_CONTENT = {
