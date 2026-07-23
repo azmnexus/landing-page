@@ -28,7 +28,7 @@ export const TeamSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[24px]">
+        <div className="flex flex-wrap justify-center gap-[24px]">
           {TEAM_CONTENT.members.map((member, index) => (
             <TeamMemberCard key={index} member={member} index={index} />
           ))}
@@ -54,7 +54,7 @@ const TeamMemberCard = ({ member, index }: { member: TeamMember; index: number }
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.1 }}
       viewport={{ once: true, amount: 0.15 }}
-      className="h-[360px]"
+      className="h-[360px] w-full sm:w-[320px] max-w-[320px]"
       onMouseEnter={() => setFlipped(true)}
       onMouseLeave={() => setFlipped(false)}
       onFocus={() => setFlipped(true)}
