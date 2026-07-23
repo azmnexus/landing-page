@@ -34,11 +34,6 @@ export const TeamSection = () => {
           ))}
         </div>
 
-        <div className="mt-8 text-center">
-          <span className="text-text-secondary text-[14px] italic">
-            {TEAM_CONTENT.footerText}
-          </span>
-        </div>
       </div>
     </section>
   );
