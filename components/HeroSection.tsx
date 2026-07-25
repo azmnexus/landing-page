@@ -30,8 +30,8 @@ export const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-[1200px] mx-auto px-6 py-20 lg:px-20 lg:py-24">
-        <div className="mx-auto max-w-[680px] text-center lg:mx-0 lg:text-left">
+      <div className="relative z-10 flex w-full justify-center px-6 py-20 lg:px-20 lg:py-24">
+        <div className="mx-auto flex max-w-[680px] flex-col items-center text-center">
           {/* Label */}
           <motion.span
             initial={{ opacity: 0, y: 30 }}
@@ -57,7 +57,7 @@ export const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 }}
-            className="mx-auto mb-[28px] max-w-[600px] text-[16px] leading-[1.75] text-white/80 sm:text-[17px] lg:mx-0"
+            className="mx-auto mb-[28px] max-w-[600px] text-[16px] leading-[1.75] text-white/80 sm:text-[17px]"
           >
             {HERO_CONTENT.subtext}
           </motion.p>
@@ -67,7 +67,7 @@ export const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.6 }}
-            className="mb-[32px] flex flex-wrap justify-center gap-[12px] lg:justify-start"
+            className="mb-[32px] flex flex-wrap justify-center gap-[12px]"
           >
             <motion.a
               whileHover={{ scale: 1.02 }}
@@ -92,7 +92,7 @@ export const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.8 }}
-            className="flex flex-wrap items-center justify-center gap-[20px] lg:justify-start"
+            className="flex flex-wrap items-center justify-center gap-[20px]"
           >
             {HERO_CONTENT.stats.map((stat, index) => (
               <React.Fragment key={index}>
