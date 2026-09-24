@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ["var(--font-plus-jakarta-sans)"],
+        arabic: ["var(--font-arabic)"],
       },
       colors: {
         primary: "#1D4A52",

@@ -13,6 +13,23 @@ body {
   background: rgb(var(--background-start-rgb));
 }
 
+/*
+ * Plus Jakarta Sans has no Arabic glyphs. Switch the whole document to the
+ * Arabic face when the locale is Arabic so no fallback serif appears mid-page.
+ */
+html[lang="ar"] body {
+  font-family: var(--font-arabic), var(--font-plus-jakarta-sans), sans-serif;
+  letter-spacing: 0;
+}
+
+/* Arabic does not use the wide tracking applied to Latin overline labels. */
+html[lang="ar"] .tracking-\[2px\],
+html[lang="ar"] .tracking-\[3px\],
+html[lang="ar"] .tracking-\[4px\],
+html[lang="ar"] .tracking-\[1\.5px\] {
+  letter-spacing: 0;
+}
+
 .scrollbar-none {
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -22,8 +39,29 @@ body {
   display: none;
 }
 
+/*
+ * Type sitting directly on card imagery needs separation from the photo behind
+ * it. A tight dark shadow keeps the text crisp without having to darken the
+ * image further, which would undo the point of showing it.
+ */
+@layer utilities {
+  .text-on-image {
+    text-shadow:
+      0 1px 3px rgba(0, 0, 0, 0.85),
+      0 0 2px rgba(0, 0, 0, 0.7);
+  }
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
+    /* Keeps anchor targets clear of the fixed 80px header. */
+    scroll-padding-top: 96px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
   }
 }

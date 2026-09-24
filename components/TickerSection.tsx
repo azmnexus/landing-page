@@ -1,30 +1,40 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
-import { TICKER_CONTENT } from "@/content/content.config";
+import { motion, useReducedMotion } from "framer-motion";
+import { useContent, useDir } from "@/i18n/LocaleProvider";
 
+/**
+ * Capability marquee. Direction is inverted for RTL so the text travels the
+ * same way the reader's eye does.
+ */
 export const TickerSection = () => {
-  // Duplicate the content to ensure seamless loop
-  const tickerItems = [...TICKER_CONTENT, ...TICKER_CONTENT];
+  const content = useContent();
+  const dir = useDir();
+  const reduceMotion = useReducedMotion();
+
+  // Duplicated so the loop is seamless.
+  const items = [...content.ticker, ...content.ticker];
+  const from = dir === "rtl" ? "-50%" : "0%";
+  const to = dir === "rtl" ? "0%" : "-50%";
 
   return (
-    <section className="bg-primary h-[52px] w-full overflow-hidden flex items-center">
+    <section className="flex h-[52px] w-full items-center overflow-hidden bg-primary">
       <motion.div
-        animate={{ x: ["0%", "-50%"] }}
+        animate={reduceMotion ? undefined : { x: [from, to] }}
         transition={{
           duration: 25,
           repeat: Infinity,
           ease: "linear",
         }}
-        className="flex whitespace-nowrap items-center"
+        className="flex items-center whitespace-nowrap"
       >
-        {tickerItems.map((item, index) => (
-          <div key={index} className="flex items-center">
-            <span className="text-white text-[14px] font-medium px-4">
-              {item}
+        {items.map((item, index) => (
+          <div key={`${item}-${index}`} className="flex items-center">
+            <span className="px-4 text-[14px] font-medium text-white">{item}</span>
+            <span className="text-accent" aria-hidden="true">
+              ◆
             </span>
-            <span className="text-accent">◆</span>
           </div>
         ))}
       </motion.div>

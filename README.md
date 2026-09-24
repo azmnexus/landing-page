@@ -1,36 +1,132 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AZM Nexus — Corporate Website
 
-## Getting Started
+Corporate website for **AZM Nexus Limited** — an internationally oriented
+technology hub and enterprise transformation partner.
 
-First, run the development server:
+Through its Technology Services division, AZM Nexus connects six disciplines into
+one capability:
+
+**Digital Presence · Software Engineering · Cloud · Artificial Intelligence · Automation · Data**
+
+> We do not merely digitise isolated areas of a business. We connect its digital
+> presence, customer acquisition, communication, software, data and internal
+> processes into an intelligent, scalable operating system.
+
+---
+
+## Quick Start
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) — you will be redirected to
+your preferred locale (e.g. `/en`).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build    # production build (prerenders 24 pages)
+npm start        # serve the production build
+npm run lint     # ESLint
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Requires Node.js 18+.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Languages
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The site ships in four locales, always locale-prefixed so every page has one
+canonical URL:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Locale | Language | Direction |
+|---|---|---|
+| `en` | English | LTR |
+| `ar` | العربية | **RTL** |
+| `fr` | Français | LTR |
+| `de` | Deutsch | LTR |
 
-## Deploy on Vercel
+`/en/services`, `/ar/services`, `/fr/services`, `/de/services`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+> ⚠️ The `ar`, `fr` and `de` translations are currently machine-assisted drafts
+> and require native review before launch. English is the reference text.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## Pages
+
+| Route | Content |
+|---|---|
+| `/` | Hero, proposition, capabilities, approach, industries, insights, leadership, contact |
+| `/services` | All six disciplines in detail, plus engagement model |
+| `/about` | Position, mission, values, delivery characteristics, leadership |
+| `/approach` | The five-stage engagement sequence |
+| `/industries` | Sectors served |
+| `/insights` | Perspectives (placeholder pending published content) |
+
+---
+
+## Editing Content
+
+All copy lives in `content/locales/`. English is the master:
+
+```
+content/types.ts               # SiteContent contract
+content/locales/en.ts          # master copy — edit this first
+content/locales/{ar,fr,de}.ts   # translations
+```
+
+Every locale file is typed as `SiteContent`, so **omitting a key is a build
+error** — languages cannot silently drift apart.
+
+To change wording: edit `en.ts`, then mirror the change in the other three.
+
+**Do not write marketing copy inside components.** Wording is governed by
+`MESSAGING.md`.
+
+---
+
+## Documentation
+
+| Document | Purpose |
+|---|---|
+| [`DOCUMENTATION.md`](./DOCUMENTATION.md) | Architecture, i18n system, components, SEO, conventions |
+| [`MESSAGING.md`](./MESSAGING.md) | Positioning, tone of voice, boilerplate, approved vocabulary |
+| [`SOCIAL.md`](./SOCIAL.md) | Channel bios, content pillars, launch announcement, hashtags |
+
+---
+
+## Tech Stack
+
+Next.js 14 (App Router) · TypeScript · Tailwind CSS · Framer Motion · Lucide React
+
+Internationalisation is hand-rolled (locale segment + typed dictionaries) rather
+than library-driven, to keep the dependency surface small and translations
+compile-checked.
+
+---
+
+## Environment Variables
+
+| Variable | Required | Default |
+|---|---|---|
+| `NEXT_PUBLIC_SITE_URL` | Recommended | `https://www.azmnexus.com` |
+| `NEXT_PUBLIC_FORMSPREE_ID` | Optional | `mgobkzgy` |
+
+Set `NEXT_PUBLIC_SITE_URL` in production so canonical URLs, hreflang alternates
+and the sitemap resolve correctly.
+
+---
+
+## Deployment
+
+Standard Next.js deployment. The build prerenders all 24 locale pages as static
+HTML; `middleware.ts` handles locale detection and redirects at the edge.
+
+Verify after deploy:
+
+1. `/` redirects to a locale
+2. `/sitemap.xml` returns 24 URLs
+3. `/robots.txt` is present
+4. `/ar` renders right-to-left
+5. The contact form submits successfully
