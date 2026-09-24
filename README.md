@@ -130,3 +130,4 @@ Verify after deploy:
 3. `/robots.txt` is present
 4. `/ar` renders right-to-left
 5. The contact form submits successfully
+6. /
